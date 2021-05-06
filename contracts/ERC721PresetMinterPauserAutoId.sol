@@ -51,6 +51,11 @@ contract ERC721PresetMinterPauserAutoId is Context, AccessControlEnumerable, ERC
         _setupRole(PAUSER_ROLE, _msgSender());
     }
 
+    function setBaseURI(string memory baseTokenURI) external {
+        require(hasRole(DEFAULT_ADMIN_ROLE, _msgSender()), "ERC721PresetMinterPauserAutoId: must have DEFAULT_ADMIN_ROLE to set baseTokenURI");
+        _baseTokenURI = baseTokenURI;
+    }
+
     function _baseURI() internal view virtual override returns (string memory) {
         return _baseTokenURI;
     }
