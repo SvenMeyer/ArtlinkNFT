@@ -2,13 +2,22 @@
 
 pragma solidity ^0.8.0;
 
-import "../ERC721.sol";
-import "../extensions/ERC721Enumerable.sol";
-import "../extensions/ERC721Burnable.sol";
-import "../extensions/ERC721Pausable.sol";
-import "../../../access/AccessControlEnumerable.sol";
-import "../../../utils/Context.sol";
-import "../../../utils/Counters.sol";
+// import "../ERC721.sol";
+// import "../extensions/ERC721Enumerable.sol";
+// import "../extensions/ERC721Burnable.sol";
+// import "../extensions/ERC721Pausable.sol";
+// import "../../../access/AccessControlEnumerable.sol";
+// import "../../../utils/Context.sol";
+// import "../../../utils/Counters.sol";
+
+// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.1/contracts/token/ERC721/presets/ERC721PresetMinterPauserAutoId.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.1/contracts/token/ERC721/ERC721.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.1/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.1/contracts/token/ERC721/extensions/ERC721Burnable.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.1/contracts/token/ERC721/extensions/ERC721Pausable.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.1/contracts/access/AccessControlEnumerable.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.1/contracts/utils/Context.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.1/contracts/utils/Counters.sol";
 
 /**
  * @dev {ERC721} token, including:
@@ -17,6 +26,7 @@ import "../../../utils/Counters.sol";
  *  - a minter role that allows for token minting (creation)
  *  - a pauser role that allows to stop all token transfers
  *  - token ID and URI autogeneration
+ *  - a function setBaseURI if metadata hosting location changes after contract deployment and minting
  *
  * This contract uses {AccessControl} to lock permissioned functions using the
  * different roles - head to its documentation for details.
