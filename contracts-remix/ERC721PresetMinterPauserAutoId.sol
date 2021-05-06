@@ -70,6 +70,10 @@ contract ERC721PresetMinterPauserAutoId is Context, AccessControlEnumerable, ERC
         return _baseTokenURI;
     }
 
+    function getBaseURI() external view returns (string memory) {
+        return _baseURI();
+    }
+
     /**
      * @dev Creates a new token for `to`. Its token ID will be automatically
      * assigned (and available on the emitted {IERC721-Transfer} event), and the token
